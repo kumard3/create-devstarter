@@ -61,9 +61,18 @@ async function promptForMissingOptions(options) {
    }
    
    export async function cli(args) {
+    let anim = chalkAnimation.rainbow(`\nDEV-STARTER\n`);
+    await new Promise((res) => setTimeout(res, 1500));
+    anim.stop();
+    console.log("Welcome to Dev Starter.");
+    console.log("");
     let options = parseArgumentsIntoOptions(args);
     options = await promptForMissingOptions(options);
     console.log(options);
     await createProject(options);
-
+    let anim2 = chalkAnimation.neon(
+      "\n You have succesfully installed the  template. \n"
+    );
+    await new Promise((res) => setTimeout(res, 3500));
+    anim2.stop();
    }
