@@ -18,7 +18,7 @@
     "create-devstarter"
   ],
   "author": "kumard3 <kumardeepanshu157@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
