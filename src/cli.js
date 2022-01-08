@@ -68,7 +68,7 @@ async function promptForMissingOptions(options) {
     console.log("");
     let options = parseArgumentsIntoOptions(args);
     options = await promptForMissingOptions(options);
-    console.log(options);
+    // console.log(options);
     await createProject(options);
     let anim2 = chalkAnimation.neon(
       "\n You have succesfully installed the  template. \n"
