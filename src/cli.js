@@ -43,11 +43,17 @@ async function promptForMissingOptions(options) {
       });
     }
    
-    if (!options.git) {
+    if (!options.git && !options.runInstall) {
       questions.push({
         type: 'confirm',
         name: 'git',
         message: 'Initialize a git repository?',
+        default: false,
+      }),
+      questions.push({
+        type: 'confirm',
+        name: 'runInstall',
+        message: 'Do you want to run npm install?',
         default: false,
       });
     }
@@ -57,6 +63,7 @@ async function promptForMissingOptions(options) {
       ...options,
       template: options.template || answers.template,
       git: options.git || answers.git,
+      runInstall: options.runInstall || answers.runInstall,
     };
    }
    
