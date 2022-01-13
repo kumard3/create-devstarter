@@ -1,6 +1,6 @@
 {
   "name": "@kumardeepanshu/create-devstarter",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "A CLI to bootstrap my new projects",
   "main": "src/index.js",
   "bin": {
@@ -32,7 +32,8 @@
     "ncp": "^2.0.0",
     "pkg-install": "^0.2.0",
     "spdx-license-list": "^5.0.0"
-  },"files": [
+  },
+  "files": [
     "bin/",
     "src/",
     "templates/"
