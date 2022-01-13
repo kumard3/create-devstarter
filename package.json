@@ -1,6 +1,6 @@
 {
-  "name": "@kumardeepanshu/create-devstarter",
-  "version": "1.0.9",
+  "name": "create-devstarter",
+  "version": "1.1.0",
   "description": "A CLI to bootstrap my new projects",
   "main": "src/index.js",
   "bin": {
