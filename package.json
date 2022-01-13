@@ -1,6 +1,6 @@
 {
   "name": "create-devstarter",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A CLI to bootstrap my new projects",
   "main": "src/index.js",
   "bin": {
@@ -15,7 +15,9 @@
   },
   "keywords": [
     "cli",
-    "create-devstarter"
+    "create-devstarter",
+    "kumar deepanshu",
+    "next js"
   ],
   "author": "kumard3 <kumardeepanshu157@gmail.com>",
   "license": "ISC",
