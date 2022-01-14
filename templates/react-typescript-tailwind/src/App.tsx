@@ -1,9 +1,22 @@
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
+export const Homepage = () => {
+return (
+  <h1>hello </h1>
+)
+}
 
 function App() {
   return (
-    <div className="bg-black min-h-screen flex justify-center items-center">
-      <h1 className="text-white text-9xl">Hello World with react route dom</h1>
+    <div className="">
+      <Router>
+        <Routes>
+          <Route exact path="/"   element={  <HomePage />}/>
+          
+        </Routes>
+      </Router>
     </div>
   );
 }
