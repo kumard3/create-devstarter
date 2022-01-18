@@ -38,7 +38,7 @@ async function promptForMissingOptions(options) {
         type: 'list',
         name: 'template',
         message: 'Please choose which project template to use',
-        choices: ['JavaScript', 'TypeScript','Tailwind-Typescript','React-Typescript-Tailwind','React-Tailwind-Js'],
+        choices: ['JavaScript', 'TypeScript','Tailwind-Typescript','React-Typescript-Tailwind', 'NextJs-Tailwind-Js','React-Tailwind-Js'],
         default: defaultTemplate,
       });
     }
