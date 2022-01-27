@@ -2,6 +2,19 @@ import arg from 'arg';
 import inquirer from 'inquirer';
 import { createProject } from './main';
 import chalkAnimation from "chalk-animation";
+
+
+const help = `
+  Usage:
+    $ npx create-app-test [flags...] [<dir>]
+
+  If <dir> is not provided up front you will be prompted for it.
+
+  Flags:
+    --help, -h          Show this help message
+    --version, -v       Show the version of this script
+`;
+
 function parseArgumentsIntoOptions(rawArgs) {
  const args = arg(
    {
