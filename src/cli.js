@@ -39,8 +39,8 @@ async function promptForMissingOptions(options) {
       name: "template",
       message: "Please choose which project template to use",
       choices: [
-        "JavaScript",
-        "TypeScript",
+        "Next-JavaScript",
+        "Next-TypeScript",
         "Tailwind-Typescript",
         "React-Typescript-Tailwind",
         "NextJs-Tailwind-Js",
