@@ -42,7 +42,7 @@ async function promptForMissingOptions(options) {
         "Nextjs-JavaScript",
         "Nextjs-TypeScript",
         "Nextjs-Tailwind-Typescript",
-        "React-Typescript-Tailwind",
+        "Reactjs-Typescript-Tailwind",
         "NextJs-Tailwind-Js",
         "Reactjs-Tailwind-Js",
         "Nextjs-Particlejs-Starter",
