@@ -1,11 +1,6 @@
 import Head from "next/head";
-interface Props {
-  title: string;
-  description: string;
-  image: string;
-  url: string;
-}
-export default function SEO({ title, description, image,url }: Props) {
+
+export default function SEO({ title, description, image, url }) {
   return (
     <Head>
       <title>{title}</title>
@@ -21,7 +16,10 @@ export default function SEO({ title, description, image,url }: Props) {
         property="og:description"
         content={description}
       />
-      <meta property="og:site_name" content="Kumar deepanshu Personal Portfolio" />
+      <meta
+        property="og:site_name"
+        content="Kumar deepanshu Personal Portfolio"
+      />
 
       <meta name="twitter:card" content="It is my personal portfolio" />
       <meta name="twitter:title" content={title} />
@@ -29,11 +27,10 @@ export default function SEO({ title, description, image,url }: Props) {
       <meta name="twitter:site" content="@propernoun" />
       <meta name="twitter:creator" content="@propernounco" />
 
-    
-        <meta property="og:image" content={`${image}`} />
-     <meta name="twitter:image" content={`${image}`} />
+      <meta property="og:image" content={`${image}`} />
+      <meta name="twitter:image" content={`${image}`} />
 
-              {/* Open Graph / Facebook */}
+      {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
@@ -48,8 +45,6 @@ export default function SEO({ title, description, image,url }: Props) {
       <meta property="twitter:image" content={image} />
       <meta name="robots" content="Index" />
       <link rel="manifest" href="/manifest.json" />
-
-
     </Head>
   );
 }
