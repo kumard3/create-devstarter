@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import useOnClickOutside from "./useOnClickOutside";
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const navData = [
   {
@@ -24,14 +24,12 @@ const navData = [
 
 export default function NavComponent() {
   // Create a ref that we add to the element for which we want to detect outside clicks
-  const ref = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
+  const ref = useRef < HTMLDivElement > null;
 
   // State for our modal
   const [isModalOpen, setModalOpen] = useState(false);
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => setModalOpen(false));
-
 
   return (
     // <Popover className= {`sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-gray-900/10 bg-white supports-backdrop-blur:bg-white/95 ${show && 'bg-inherit	'}`}>
@@ -43,7 +41,7 @@ export default function NavComponent() {
               {/* <li className={router.pathname == "#hero" ? "active" : "koko"}>
               <Link href="#hero">home</Link>
             </li> */}
-              <Link href="#home">
+              <Link to="#home">
                 <h1>LOGO</h1>
                 {/* <span className="text-4xl font-bold">logo</span> */}
               </Link>
@@ -84,15 +82,15 @@ export default function NavComponent() {
                         <div className="mt-[5rem] z-10 relative">
                           <nav className="grid gap-y-8">
                             {navData.map((item) => (
-                              <a
+                              <Link
                                 key={item.name}
-                                href={item.href}
+                                to={item.href}
                                 className="-m-3 p-3 flex items-center rounded-md hover:bg-black  border-[1px] border-red-500/60"
                               >
                                 <h1 className="my-3 ml-3 text-3xl font-bold ">
                                   {item.name}
                                 </h1>
-                              </a>
+                              </Link>
                             ))}
                           </nav>
                         </div>
@@ -127,7 +125,7 @@ export default function NavComponent() {
             <nav className="hidden sm:flex space-x-10 items-center">
               {navData.map((n) => {
                 return (
-                  <Link key={n.name} href={n.href}>
+                  <Link key={n.name} to={n.href}>
                     {n.name}
                   </Link>
                 );
@@ -139,4 +137,3 @@ export default function NavComponent() {
     </div>
   );
 }
-
