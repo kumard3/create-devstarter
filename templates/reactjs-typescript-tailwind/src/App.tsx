@@ -1,22 +1,23 @@
+import { Route, Routes } from "react-router-dom";
+import NavComponent from "./components/NavComponent";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-
-export const Homepage = () => {
-return (
-  <h1>hello </h1>
-)
-}
+export const HomePage = () => {
+  return (
+    <div className="bg-[#0F182B] text-white min-h-screen">
+      <h1>tailwind css starter </h1>
+    </div>
+  );
+};
 
 function App() {
   return (
     <div className="">
-      <Router>
+      <NavComponent />
+      <>
         <Routes>
-          <Route exact path="/"   element={  <HomePage />}/>
-          
+          <Route path="/" element={<HomePage />} />
         </Routes>
-      </Router>
+      </>
     </div>
   );
 }

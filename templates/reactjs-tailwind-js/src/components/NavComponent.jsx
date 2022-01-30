@@ -1,24 +1,16 @@
 import React, { useRef, useState } from "react";
-// import  Link  from "react-router-dom";
+import  {Link}  from "react-router-dom";
 import useOnClickOutside from "./useOnClickOutside";
 
 
 const navData = [
   {
-    name: "Home",
-    href: "#home",
+    name: "WithPackage",
+    href: "/withpackage",
   },
   {
-    name: "Work",
-    href: "#work",
-  },
-  {
-    name: "About",
-    href: "#about",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
+    name: "WithoutPackage",
+    href: "/withoutpackage",
   },
 ];
 
@@ -40,10 +32,10 @@ export default function NavComponent() {
               {/* <li className={router.pathname == "#hero" ? "active" : "koko"}>
               <Link href="#hero">home</Link>
             </li> */}
-              <a href="#home">
+              <Link to="/">
                 <h1>LOGO</h1>
                 {/* <span className="text-4xl font-bold">logo</span> */}
-              </a>
+              </Link>
             </div>
             <div className="-mr-2 -my-2 sm:hidden">
               <>
@@ -124,9 +116,9 @@ export default function NavComponent() {
             <nav className="hidden sm:flex space-x-10 items-center">
               {navData.map((n) => {
                 return (
-                  <a key={n.name} href={n.href}>
+                  <Link key={n.name} to={n.href}>
                     {n.name}
-                  </a>
+                  </Link>
                 );
               })}
             </nav>
