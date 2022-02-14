@@ -5,18 +5,14 @@ import useOnClickOutside from "./useOnClickOutside";
 
 const navData = [
   {
-    name: "WithPackage",
-    href: "/withpackage",
-  },
-  {
-    name: "WithoutPackage",
-    href: "/withoutpackage",
+    name: "Home",
+    href: "/",
   },
 ];
 
 export default function NavComponent() {
   // Create a ref that we add to the element for which we want to detect outside clicks
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
 
   // State for our modal
   const [isModalOpen, setModalOpen] = useState(false);
