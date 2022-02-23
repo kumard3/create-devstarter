@@ -1,7 +1,8 @@
 import arg from "arg";
 import inquirer from "inquirer";
-import { createProject } from "./main";
+import { createProject } from "../../src/main";
 import chalkAnimation from "chalk-animation";
+
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
@@ -74,20 +75,48 @@ async function promptForMissingOptions(options) {
     runInstall: options.runInstall || answers.runInstall,
   };
 }
+var questions = [
+  {
+    type: "input",
+    name: "name",
+    message: "What's your name?",
+    default: "my-app",
+  },
+];
 
 export async function cli(args) {
   let anim = chalkAnimation.rainbow(`\nDEV-STARTER\n`);
   await new Promise((res) => setTimeout(res, 1500));
   anim.stop();
   console.log("Welcome to Dev Starter.");
-  console.log("");
-  let options = parseArgumentsIntoOptions(args);
-  options = await promptForMissingOptions(options);
-  // console.log(options);
-  await createProject(options);
+  await inquirer.prompt(questions).then((answers) => {
+      let targetDirectory = await answers['name']
+        let options = parseArgumentsIntoOptions(args);
+        options = await promptForMissingOptions(options);
+        await createProject(options, targetDirectory);
+ 
+  });
+
+
   let anim2 = chalkAnimation.neon(
     "\n You have succesfully installed the  template. \n"
   );
   await new Promise((res) => setTimeout(res, 3500));
   anim2.stop();
+}
+
+{
+  /* 
+    var questions = [
+      {
+        type: 'input',
+        name: 'name',
+        message: "What's your name?"
+      }
+    ]
+    
+    inquirer.prompt(questions).then(answers => {
+      console.log(`Hi ${answers['name']}!`)
+    })
+*/
 }
