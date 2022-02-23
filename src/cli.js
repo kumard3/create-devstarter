@@ -91,12 +91,13 @@ export async function cli(args) {
   anim.stop();
   console.log("Welcome to Dev Starter.");
   await inquirer.prompt(questions).then((answers) => {
-
-      let targetDirectory =  answers["name"];
+    async function test() {
+      let targetDirectory = await answers["name"];
       let options = parseArgumentsIntoOptions(args);
-      options =  promptForMissingOptions(options);
-       createProject(options, targetDirectory);
-
+      options = await promptForMissingOptions(options);
+      await createProject(options, targetDirectory);
+    }
+  await test();
   });
 
   let anim2 = chalkAnimation.neon(
