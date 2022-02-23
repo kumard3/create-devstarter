@@ -90,16 +90,18 @@ export async function cli(args) {
   await new Promise((res) => setTimeout(res, 1500));
   anim.stop();
   console.log("Welcome to Dev Starter.");
-  await inquirer.prompt(questions).then((answers) => {
-    async function test() {
-      let targetDirectory = await answers["name"];
-      let options = parseArgumentsIntoOptions(args);
-      options = await promptForMissingOptions(options);
-      await createProject(options, targetDirectory);
-    }
-  await test();
-  });
-
+  async function folder() {
+    await inquirer.prompt(questions).then((answers) => {
+      async function test() {
+        let targetDirectory = await answers["name"];
+        let options = parseArgumentsIntoOptions(args);
+        options = await promptForMissingOptions(options);
+        await createProject(options, targetDirectory);
+      }
+       test();
+    });
+  }
+  folder();
   let anim2 = chalkAnimation.neon(
     "\n You have succesfully installed the  template. \n"
   );
