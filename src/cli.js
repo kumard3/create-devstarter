@@ -92,8 +92,8 @@ export async function cli(args) {
   await inquirer.prompt(questions).then((answers) => {
     let targetDirectory = answers["name"];
     let options = parseArgumentsIntoOptions(args);
-    options = await promptForMissingOptions(options);
-    await createProject(options, targetDirectory);
+    options =  promptForMissingOptions(options);
+    createProject(options, targetDirectory);
   });
 
   let anim2 = chalkAnimation.neon(
