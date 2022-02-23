@@ -3,7 +3,7 @@ import arg from "arg";
 import inquirer from "inquirer";
 import { createProject } from "./main";
 import chalkAnimation from "chalk-animation";
-
+import {} from '../templates'
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
@@ -91,13 +91,10 @@ export async function cli(args) {
   anim.stop();
   console.log("Welcome to Dev Starter.");
   await inquirer.prompt(questions).then((answers) => {
-    cmd.run(``, async function (err, data, stderr) {
-
-      let targetDirectory = await answers["name"];
+      let targetDirectory =  answers["name"];
       let options = parseArgumentsIntoOptions(args);
-      options = await promptForMissingOptions(options);
-      await createProject(options, targetDirectory);
-    });
+      options =  promptForMissingOptions(options);
+       createProject(options, targetDirectory);
   });
 
   let anim2 = chalkAnimation.neon(
