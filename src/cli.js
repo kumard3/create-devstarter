@@ -90,7 +90,7 @@ export async function cli(args) {
   anim.stop();
   console.log("Welcome to Dev Starter.");
   await inquirer.prompt(questions).then((answers) => {
-    let targetDirectory =  answers["name"];
+    let targetDirectory = answers["name"];
     let options = parseArgumentsIntoOptions(args);
     options = await promptForMissingOptions(options);
     await createProject(options, targetDirectory);
