@@ -1,6 +1,7 @@
+import cmd from "node-cmd";
 import arg from "arg";
 import inquirer from "inquirer";
-import { createProject } from "../../src/main";
+import { createProject } from "./main";
 import chalkAnimation from "chalk-animation";
 
 function parseArgumentsIntoOptions(rawArgs) {
@@ -90,10 +91,13 @@ export async function cli(args) {
   anim.stop();
   console.log("Welcome to Dev Starter.");
   await inquirer.prompt(questions).then((answers) => {
-    let targetDirectory = answers["name"];
-    let options = parseArgumentsIntoOptions(args);
-    options =  promptForMissingOptions(options);
-    createProject(options, targetDirectory);
+    cmd.run(``, async function (err, data, stderr) {
+
+      let targetDirectory = await answers["name"];
+      let options = parseArgumentsIntoOptions(args);
+      options = await promptForMissingOptions(options);
+      await createProject(options, targetDirectory);
+    });
   });
 
   let anim2 = chalkAnimation.neon(
