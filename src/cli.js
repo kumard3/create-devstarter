@@ -90,33 +90,15 @@ export async function cli(args) {
   anim.stop();
   console.log("Welcome to Dev Starter.");
   await inquirer.prompt(questions).then((answers) => {
-      let targetDirectory = await answers['name']
-        let options = parseArgumentsIntoOptions(args);
-        options = await promptForMissingOptions(options);
-        await createProject(options, targetDirectory);
- 
+    let targetDirectory =  answers["name"];
+    let options = parseArgumentsIntoOptions(args);
+    options = await promptForMissingOptions(options);
+    await createProject(options, targetDirectory);
   });
-
 
   let anim2 = chalkAnimation.neon(
     "\n You have succesfully installed the  template. \n"
   );
   await new Promise((res) => setTimeout(res, 3500));
   anim2.stop();
-}
-
-{
-  /* 
-    var questions = [
-      {
-        type: 'input',
-        name: 'name',
-        message: "What's your name?"
-      }
-    ]
-    
-    inquirer.prompt(questions).then(answers => {
-      console.log(`Hi ${answers['name']}!`)
-    })
-*/
 }
