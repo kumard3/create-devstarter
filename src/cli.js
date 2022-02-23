@@ -97,14 +97,14 @@ export async function cli(args) {
         let options = parseArgumentsIntoOptions(args);
         options = await promptForMissingOptions(options);
         await createProject(options, targetDirectory);
+        let anim2 = chalkAnimation.neon(
+          "\n You have succesfully installed the  template. \n"
+        );
+        await new Promise((res) => setTimeout(res, 3500));
+        anim2.stop();
       }
-       test();
+      test();
     });
   }
- await folder();
-  let anim2 = chalkAnimation.neon(
-    "\n You have succesfully installed the  template. \n"
-  );
-  await new Promise((res) => setTimeout(res, 3500));
-  anim2.stop();
+  await folder();
 }
