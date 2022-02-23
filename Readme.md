@@ -1,7 +1,7 @@
 
 # `create-devstarter`
 
-<img src="./devui.png" ></img> 
+<img src="https://res.cloudinary.com/ddcg0rzlo/image/upload/v1645652772/devui_g4qgdm.png" ></img> 
 
 🏗 Personal CLI to bootstrap new starters from the given templates. added yarn support
 
