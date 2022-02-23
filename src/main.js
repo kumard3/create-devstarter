@@ -52,7 +52,7 @@ async function initGit(options) {
 export async function createProject(options,targetDirectory) {
   options = {
     ...options,
-    targetDirectory: targetDirectory|| process.cwd(),
+    targetDirectory: targetDirectory || process.cwd(),
     email: "kumardeepanshu157@gmail.com",
     name: "Kumar Deepanshu",
   };
