@@ -3,7 +3,6 @@ import arg from "arg";
 import inquirer from "inquirer";
 import { createProject } from "./main";
 import chalkAnimation from "chalk-animation";
-import {} from '../templates'
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
