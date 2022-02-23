@@ -1,4 +1,3 @@
-import cmd from "node-cmd";
 import arg from "arg";
 import inquirer from "inquirer";
 import { createProject } from "./main";
