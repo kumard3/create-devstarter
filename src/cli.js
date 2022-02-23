@@ -101,7 +101,7 @@ export async function cli(args) {
        test();
     });
   }
-  folder();
+ await folder();
   let anim2 = chalkAnimation.neon(
     "\n You have succesfully installed the  template. \n"
   );
