@@ -79,7 +79,7 @@ var questions = [
   {
     type: "input",
     name: "name",
-    message: "What's your name?",
+    message: " What is your project named? ",
     default: "my-app",
   },
 ];
