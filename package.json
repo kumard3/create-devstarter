@@ -1,6 +1,6 @@
 {
   "name": "create-devstarter",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "A CLI to bootstrap a new project with a few basic packages",
   "main": "src/index.js",
   "bin": {
