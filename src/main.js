@@ -83,10 +83,6 @@ export async function createProject(options,targetDirectory) {
         task: () => createGitignore(options),
       },
       {
-        title: "Create License",
-        task: () => createLicense(options),
-      },
-      {
         title: "Initialize git",
         task: () => initGit(options),
         enabled: () => options.git,
